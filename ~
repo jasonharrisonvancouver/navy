@@ -1,0 +1,17 @@
+
+
+
+
+.open navy.db;
+DROP TABLE fleet;
+DROP TABLE ship;
+DROP TABLE sailor;
+DROP TABLE tourofduty;
+CREATE TABLE fleet(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT);
+CREATE TABLE ship (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, datebuilt TEXT, fleetid INTEGER), FOREIGN KEY(fleetid) REFERENCES fleet(id));
+CREATE TABLE sailor(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, dob TEXT);
+CREATE TABLE tourofduty(id INTEGER PRIMARY KEY AUTOINCREMENT, start TEXT, end TEXT, duty TEXT, rank TEXT, sailorid INTEGER, shipid INTEGER), FOREIGN KEY(sailorid) REFERENCES sailor(id), FOREIGN KEY(shipid) REFERENCES ship(id));
+
+
+
+
